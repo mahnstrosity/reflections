@@ -1,0 +1,41 @@
+What happens whn you initlize a repository?  Why do you need to do it?
+
+	git creates a hidden folder, .git , that includes meta data about the files in what is now your new git repository for that folder
+
+	the metadata keesp tracks of all the changes to the files in this repository since it's creation
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+	the working directory has files that may or my not be tracked
+	
+	the staging area contains the files that have been added to be tracked
+
+	the value offered ... :  the staging area is the group of files that will be committed
+	this way you can keep commits small and specific
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+
+	by adding only the files that include the logical change to the staging area b4 commiting
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+	if you wanted to try adding some experimental code without know it if it will work or if you will like the outcome
+
+	branches help because you can work on those changes while you work on other changes.  if the new branches code is something that works out you can merge the changes together later.  you never had to stop working on the trunk changes.  this helps productivity
+
+	you might also be adding some new feature for which you have created a new branch, but then you discover a bug in the production code.  you can fix the bug on the trunk and then go back to working on the new feature on that features branch
+
+How do the diagrams help you visualize the branch structure?
+
+	you can see which parent commits are reachable and find out what other commits are unreachable whether they are on the same branch or not
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+	code form both branches are not all part of the program. we represent it in the graph as both becoming the new master branch beause from that point foward that is how it is
+
+What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
+manually?
