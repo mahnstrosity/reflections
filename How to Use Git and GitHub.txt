@@ -1,0 +1,138 @@
+How to Use Git and GitHub
+	*********
+	Lesson 1
+	*********
+	- git log (shows previous commits)
+	- git diff (compares different versions of commits within git)
+		ex: git diff 4035769377cce96a88d5c1167079e12f30492391 4035769377cce96a88d5c1167079e12f30492392
+			- the newer commit is leasted 2nd
+	- git log --stat (gives statisics about which files have changed in each commit)
+	- git --version (reports the current version of GIT you have installed)
+	- git help <command> (gives information on how to use a GIT command)
+	- git clone <url> (copys repository to your system)
+	- git config --global color.ui auto (gives red/green removed/added color context to diffs)
+	- git checkout <commit id>
+		- the term "git checkout != svn checkout"
+			- GIT uses different terminology ... checking out a commit means reseting all of your files to where they were right after that commit was made
+	- detached head state - head is the most current revision.  if you checkout an earlier revision you are in a detached head state
+
+	*********
+	Lesson 2
+	*********
+	you can ust GIT to work alone and offline to have version control for your personal project
+	use GIT Hub if you want to share the repository and/or collaborate with others on the project
+	- git init
+			will create a repostiory in that directory
+			git will create a hidden folder (.git) that contains the metadata for this new repository
+	- get status
+		shows which files have changed since the last commit
+	- git add <filename>
+		adds files to the "staging area".  files in the folder but not yet added are not tracked
+	- git commit
+		commits the files that have been added to the staging area to the repository
+		- m "Commit Message" the -m parameter lets you follow it with your commimt message on the command line rather than having a text editor open for entering a commit message
+	- git diff (with no arguments) 
+		gives you the changes between the working directory and the staging area
+	- git diff --stage 
+		shows the changes in the staging areas that are not yet in the repository
+	- git reset --hard
+		discards any changes in either the staging area or the working directory (reverts back to whatever commit you have checked out)
+		this is irrversable
+	- git branch
+		shows all current branches
+	- git branch <branch name>
+		creates a new branch with the name <branch name>
+		git checkout <branch name>
+			switches you to this branch
+	- git log --graph --oneline master <new branch>
+		helps you visualize the branch structure 
+ 	- --oneline
+		parameter that can be added to git log so that you get a condensed one-line 
+		entry for each commit to make the output easier to read
+	- git show 
+		shows the changes made in a commit compared to it's parent (as a diff)
+	- git merge <branch1> <branch2>
+	- git branch -d <branch>
+		deletes branch
+
+
+	*********
+	Lesson 3
+	*********
+	- git remote
+		lists remote repositories
+	- git remote add origin <url to repository you will have created on github>
+		git remote (should now list "origin")
+	-git remote -v
+		a more verbose verision of the command
+	- git push origin master
+		sends our changes to the remote repository
+	- git pull origin master
+		pulls latest changes from the remote repository
+	- git fetch
+		updates the local copy of the remote branch
+
+
+
+
+
+
+you might be wondering how often to commit your changes. It's usually a good idea to keep commits small. As the diff between two versions gets bigger, it gets harder to understand and less useful
+
+A good rule of thumb is to make one commit per logical change. For example, if you fixed a typo, then fixed a bug in a separate part of the file, you should use one commit for each change since they are logically separate. If you do this, each commit will have one purpose that can be easily understood
+
+Repository 
+
+	- collection of files
+
+*********
+Lesson 2 
+*********
+GIT Repository
+	- directory on machine but that stores meta data about the history of the files since the repository was created
+	- the metadata is in a hidden directory
+		.git
+	- (unix tip) ls - a will show hidden files in xterm
+
+	Commit Message
+		- it is standard practice to write your commit message as if it is a command
+		ex: "Add a cake and frostring recipe" NOT "Added a cake and frostring recipe"
+
+Branches
+
+	- create branch when you want to try some experimental code that may or may not work.  one branch will include this new code, while another branch can contain working code that will allow you to give a demo at any time
+
+	- periodically you might want to merge the master into the branch so that the experimental code will have access to permanent changes to the code
+
+	MERGES
+
+		in this case merging trunk changes into the branch
+		git checkout <branch>
+		git merge <trunk> <branch>
+
+	CONFLICTS
+
+		to resolve conflicts
+			make the fix
+			add the file to the staging area
+			commit the file again
+
+*********
+Lesson 3 
+*********
+
+	GITHUB is an online "remote repository"
+
+	Forking
+		github has a feature called "Forking" that allows you to make a copy on GITHUB of an existing GITHUB repository
+		github keeps track of who has forked so that the original developer(s) are credited
+		this also makes it easy to suggest changes to the original developer(s).  a forker could suggest code they have written be added to the original repository
+
+	Merging Remote Changes
+		- git stores local copies of all the remote branches from every time you have pushed or pulled changes
+		- get pull origin master == 1) git fetch origin + 2) git mrege master origin/master
+
+
+
+
+	
