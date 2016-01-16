@@ -24,7 +24,7 @@ organized? How would branches help?
 
 	if you wanted to try adding some experimental code without know it if it will work or if you will like the outcome
 
-	branches help because you can work on those changes while you work on other changes.  if the new branches code is something that works out you can merge the changes together later.  you never had to stop working on the trunk changes.  this helps productivity
+	branches help because you can work on those changes while you work on other changes.  if the new branches code is something that works out you can merge the changes together later.  you never had to stop working on the trunk changes.  this helps productivity.
 
 	you might also be adding some new feature for which you have created a new branch, but then you discover a bug in the production code.  you can fix the bug on the trunk and then go back to working on the new feature on that features branch
 
