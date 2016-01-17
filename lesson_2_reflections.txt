@@ -35,7 +35,7 @@ How do the diagrams help you visualize the branch structure?
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
-	code form both branches are not all part of the program. we represent it in the graph as both becoming the new master branch beause from that point foward that is how it is
+	code from both branches are now all part of the program. we represent it in the graph as both becoming the new master branch because from that point foward that is how it is ... all commits are now part of master and sorted by timestamp
 
 What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
 manually?

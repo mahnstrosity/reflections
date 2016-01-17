@@ -53,12 +53,27 @@ How to Use Git and GitHub
 		shows the changes made in a commit compared to it's parent (as a diff)
 	- git merge <branch1> <branch2>
 	- git branch -d <branch>
-		deletes branch
+		deletes branch (if already merged the commits are maintained)
+	- -n
+		parameter for git log that tells how many commits you want to display
+			git log -n 1 only shows the last commit
 
 
 	*********
 	Lesson 3
 	*********
+	- creating a new remote repository on GitHub
+		- create repo
+		- make public or private
+		- decide on whehter or not to intiializae with a read me file
+			- if you don't do this you will have no commits in your remote repository and this means
+				you cannot clone your remote repostiroy to your local repository
+			- if you are setting up a remote repository for an existing local repository you can keep
+			the checkbox to "initialize with a readme file" unchecked
+	- you need to synch your local repostiry with git hub when you want github to be current with your local repo
+		- you may not want to synch after every commit as you may then end up making some things public that are not really ready for action
+	- remote repositories
+		- the repostiroy on github is referred to as your Remote Repositry or "remote"
 	- git remote
 		lists remote repositories
 	- git remote add origin <url to repository you will have created on github>
@@ -66,17 +81,25 @@ How to Use Git and GitHub
 	-git remote -v
 		a more verbose verision of the command
 	- git push origin master
-		sends our changes to the remote repository
+		sends our changes (master branch changes ... )ƒto the remote repository
 	- git pull origin master
 		pulls latest changes from the remote repository
 	- git fetch
 		updates the local copy of the remote branch
-
-
-
-
-
-
+	- you can end up with a conflict between your local repo and the remote repo if someone else commits
+	to the remote before you introduct your commit to the remote or if i have you commited from another machine to GitHub that conflicts with the machin you are on currently.  pushing your changes to the remote can then cause a conflict
+	- git pull origin master == 
+			git fetch origin 
+			git merge master origin/master
+	- pushing a new, local branch onto github creates a new branch on github by the same name
+		ex:
+			git branch newbranch
+			git checkout newbranch
+			<make some change .. let's say we change fileA.txt>
+			git add fileA.txt
+			git commit
+			git push origin newbranch
+			
 you might be wondering how often to commit your changes. It's usually a good idea to keep commits small. As the diff between two versions gets bigger, it gets harder to understand and less useful
 
 A good rule of thumb is to make one commit per logical change. For example, if you fixed a typo, then fixed a bug in a separate part of the file, you should use one commit for each change since they are logically separate. If you do this, each commit will have one purpose that can be easily understood
